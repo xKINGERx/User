@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+
+  </head>
+  <body>
+  {% for i in all_user.all %}
+  <div class="row pt-3">
+    <div class="col-2">
+        <img src="{{i.Your_pic.url}}" class="img-fluid" style=margin-left:40px />
+
+    </div>
+
+    <div class="col-6" >
+
+        <h1 style=margin-left:40px>{{i.First_name}} {{i.Last_name}}</h1>
+        <p style=margin-left:40px> {{i.Your_details}} </p>
+
+    </div>
+
+  </div>
+  {% endfor %}
+
+  </body>
+</html>
+{% endblock %}
